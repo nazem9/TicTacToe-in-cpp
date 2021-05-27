@@ -26,6 +26,9 @@ public:
 	void setWinning(bool w) {
 		this->win = w;
 	}
+	int AI(Game* G) {
+		G->grid;
+	}
 	
 };
 
@@ -93,7 +96,7 @@ public:
 			else {
 				return false;
 			}
-		}j
+		}
 	}
 
 	void Run() {
