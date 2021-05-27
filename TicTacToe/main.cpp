@@ -26,9 +26,9 @@ public:
 	void setWinning(bool w) {
 		this->win = w;
 	}
-	int AI(Game* G) {
-		G->grid;
-	}
+//	int AI(Game* G) {
+//		G->grid;
+//	}
 	
 };
 
@@ -84,19 +84,21 @@ public:
 		}
 	}
 	bool WinningConditions() {
+		bool isWinning = false;
 		for (int i = 0; i < 3; i++) {
 			if (grid[3 * i] == 'X' && grid[3 * i + 1] == 'X' && grid[3 * i + 2] == 'X' || grid[i] == 'X' && grid[i + 3] == 'X' && grid[i + 6] == 'X' || grid[0] == 'X' && grid[4]=='X' &&grid[8] == 'X' || grid[2] == 'X' && grid[4] =='X' && grid[6] == 'X') {
 				whoWon = "Player 1 Wins!";
-				return true;
+				isWinning = true;
+				break;
 			}
 			else if (grid[3 * i] == 'O' && grid[3 * i + 1] == 'O' && grid[3 * i + 2] == 'O' || grid[i] == 'O' && grid[i + 3] == 'O' && grid[i + 6] == 'O' || grid[0] == 'O' && grid[4] == 'O' && grid[8] == 'O' || grid[2] == 'O' && grid[4] == 'O' && grid[6] == 'O') {
 				whoWon = "Player 2 Wins!";
-				return true;
+				isWinning = true;
+				break;
 			}
-			else {
-				return false;
-			}
+			
 		}
+		return isWinning;
 	}
 
 	void Run() {
